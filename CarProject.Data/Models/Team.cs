@@ -14,6 +14,7 @@ namespace CarProject.Data.Models
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
-        public Driver Leader { get; set; }
+        //public Driver Leader { get; set; }
+        public ICollection<Driver> Members { get; set; }
     }
 }

@@ -20,6 +20,14 @@ namespace CarProject.Data
                 Model = "S13"
             };
 
+            var ryosukeFC = new Automobile()
+            {
+                Year = 1990,
+                Make = "Mazda",
+                Model = "RX-7",
+                OtherNames = new List<string>() { "SAVANNA RX-7 III" }
+            };
+
             // Driver
 
             var iketani = new Driver()
@@ -27,7 +35,17 @@ namespace CarProject.Data
                 FirstName = "Koichiro",
                 LastName = "Iketani",
                 Location = "Gunma Prefecture",
-                Vehicles = new List<Automobile>() { iketaniS13 }
+                Vehicles = new List<Automobile>() { iketaniS13 },
+            };
+
+
+            var ryosuke = new Driver()
+            {
+                FirstName = "Ryosuke",
+                LastName = "Takahashi",
+                Location = "Takasaki, Gunma Prefecture",
+                Vehicles = new List<Automobile>() { ryosukeFC }
+
             };
 
             // Team
@@ -35,8 +53,28 @@ namespace CarProject.Data
             var speedStars = new Team()
             {
                 Name = "Akina Speed Stars",
-                Leader = iketani
+                Members = new List<Driver>() { iketani },
             };
+
+            var projectD = new Team()
+            {
+                Name = "ProjectD",
+                Members = new List<Driver>() { ryosuke }
+            };
+
+            ryosukeFC.Driver = ryosuke;
+            iketaniS13.Driver = iketani;
+            ryosuke.Team = projectD;
+            iketani.Team = speedStars;
+            context.Automobile.Add(iketaniS13);
+            context.Automobile.Add(ryosukeFC);
+            context.Driver.Add(iketani);
+            context.Driver.Add(ryosuke);
+            context.Team.Add(speedStars);
+            context.Team.Add(projectD);
+
+
+
         }
     }
 }

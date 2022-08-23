@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="CarProjectDbContext.cs" />
     <Compile Include="CarProjectDbInitializer.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Models\Automobile.cs" />
     <Compile Include="Models\CustomAutomobile.cs" />
     <Compile Include="Models\Driver.cs" />
