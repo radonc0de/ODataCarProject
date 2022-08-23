@@ -22,6 +22,8 @@ namespace CarProject.Data.Models
         [StringLength(100)]
         public string Model { get; set; }
         public ICollection<string> OtherNames { get; set; }
+        [Required]
+        public Driver Driver { get; set; }
 
     
     }

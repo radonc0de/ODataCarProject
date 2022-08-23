@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace CarProject.API.Controllers
 {
-    public class DriverController : ODataController
+    public class DriversController : ODataController
     {
         private CarProjectDbContext _ctx = new CarProjectDbContext();
 
