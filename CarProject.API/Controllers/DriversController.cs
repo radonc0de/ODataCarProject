@@ -17,6 +17,19 @@ namespace CarProject.API.Controllers
             return Ok(_ctx.Driver);
         }
 
+        public IHttpActionResult Get([FromODataUri] int key)
+        {
+            var person = _ctx.Driver.FirstOrDefault(p => p.DriverId == key);
+
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(person);
+
+        }
+
         protected override void Dispose(bool disposing)
         {
             _ctx.Dispose();
